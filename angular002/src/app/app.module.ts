@@ -10,6 +10,12 @@ import { PropertyComponent } from './property/property.component';
 import { EventComponent } from './event/event.component';
 import { FormsModule } from '@angular/forms';
 import { MaoDuplaComponent } from './mao-dupla/mao-dupla.component';
+import { HeaderComponent } from './header/header.component';
+import { MenuComponent } from './menu/menu.component';
+import { ReceberDadosComponent } from './receber-dados/receber-dados.component';
+import { EnviarComponent } from './enviar/enviar.component';
+import { DiretivaIfComponent } from './diretiva-if/diretiva-if.component';
+import { DiretivaForComponent } from './diretiva-for/diretiva-for.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +25,13 @@ import { MaoDuplaComponent } from './mao-dupla/mao-dupla.component';
     OutroComponent,
     PropertyComponent,
     EventComponent,
-    MaoDuplaComponent
+    MaoDuplaComponent,
+    HeaderComponent,
+    MenuComponent,
+    ReceberDadosComponent,
+    EnviarComponent,
+    DiretivaIfComponent,
+    DiretivaForComponent
   ],
   imports: [
     BrowserModule,
