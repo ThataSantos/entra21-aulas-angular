@@ -12,6 +12,7 @@ import { PaginaComponent } from './criar-componentes/pagina/pagina.component';
 import { PropertyComponent } from './binding/property/property.component';
 import { ReceberDadosComponent } from './rotas/receber-dados/receber-dados.component';
 import { SegurancaService } from './seguranca.service';
+import { ConsumindoApiComponent } from './consumindo-api/consumindo-api.component';
 
 const routes: Routes = [
   {
@@ -57,7 +58,12 @@ const routes: Routes = [
     canActivate: [SegurancaService],
   },
   { path: '', component: LoginComponent },
-  { path: '**', component: LoginComponent },
+  {
+    path: 'consumindoApi',
+    component: ConsumindoApiComponent,
+    canActivate: [SegurancaService],
+  },
+  // { path: '**', component: LoginComponent },
 ];
 
 @NgModule({

@@ -60,6 +60,12 @@ links !: Array<any>;
       cor:"far fa-circle nav-icon text-pink",
       hexa: "text-pink"
     })
+    this.links.push({
+      rota:"consumindoApi",
+      textContent:"Consumindo Api",
+      cor:"far fa-circle nav-icon text-success",
+      hexa: "text-success"
+    })
 
 
 

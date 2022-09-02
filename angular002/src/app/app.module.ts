@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
@@ -21,6 +20,9 @@ import { DiretivasModule } from './diretivas/diretivas.module';
 import { BindingModule } from './binding/binding.module';
 import { RotasModule } from './rotas/rotas.module';
 import { CriarComponentesModule } from './criar-componentes/criar-componentes.module';
+import{HttpClientModule} from '@angular/common/http';
+import { ConsumindoApiComponent } from './consumindo-api/consumindo-api.component'
+
 
 @NgModule({
   declarations: [
@@ -29,8 +31,18 @@ import { CriarComponentesModule } from './criar-componentes/criar-componentes.mo
     HeaderComponent,
     MenuComponent,
     LoginComponent,
+    ConsumindoApiComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, DiretivasModule, BindingModule,RotasModule,CriarComponentesModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    DiretivasModule,
+    BindingModule,
+    RotasModule,
+    CriarComponentesModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
