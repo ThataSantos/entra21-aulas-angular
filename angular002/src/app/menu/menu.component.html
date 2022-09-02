@@ -6,7 +6,7 @@
       class="brand-image img-circle elevation-3"
       style="opacity: 0.8"
     />
-    <span class="brand-text font-weight-light">Aulas Angular</span>
+    <span class="brand-text font-weight-light">Angular Classes</span>
   </a>
 
   <div class="sidebar">
@@ -21,59 +21,18 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
-              Grupo de link 1
+              Classes
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
           <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a routerLink="vaiPagina" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Ver componente pagina</p>
+            <li *ngFor="let link of links" class="nav-item">
+              <a [routerLink]="link.rota" class="nav-link">
+                <i [class]="link.cor"></i>
+                <p class="text"><span [class]="link.hexa">{{link.textContent}}</span> </p>
               </a>
             </li>
-            <li class="nav-item">
-              <a routerLink="outro" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Ver componente outro</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a routerLink="property" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Ver componente property</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a routerLink="event" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Ver componente event</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a routerLink="mao-dupla" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Ver componente mao-dupla</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a routerLink="receber/:info1/:dado2/:teste" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Receber</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a routerLink="diretivaIf" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Diretiva If</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a routerLink="diretivaFor" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Diretiva For</p>
-              </a>
-            </li>
+
           </ul>
         </li>
       </ul>

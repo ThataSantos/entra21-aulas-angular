@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SegurancaService } from '../seguranca.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router:Router,
+    private seguranca:SegurancaService
+  ) { }
 
   ngOnInit(): void {
   }
-
+  sair():void{
+this.seguranca.entrou=false;
+this.router.navigateByUrl("");
+  }
 }
