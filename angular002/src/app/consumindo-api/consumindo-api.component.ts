@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { catchError, of } from 'rxjs';
+import { BackendService } from '../backend.service';
 import { PokemonService } from '../pokemon.service';
 
 @Component({
@@ -9,7 +10,12 @@ import { PokemonService } from '../pokemon.service';
 })
 export class ConsumindoApiComponent implements OnInit {
   pokemon!: string;
-  constructor(private service: PokemonService) {}
+  email: string = '';
+  senha: string = '';
+  constructor(
+    private service: PokemonService,
+    private servicoBack: BackendService
+  ) {}
 
   ngOnInit(): void {}
   buscar() {
@@ -36,5 +42,40 @@ export class ConsumindoApiComponent implements OnInit {
       .subscribe((response) => {
         console.log('Processando.... ', response);
       });
+  }
+  login(): void {
+    this.servicoBack
+      .login(this.getDados())
+      .pipe(
+        catchError((error) => {
+          return of(error);
+        })
+      )
+
+      .subscribe((response: any) => {
+        console.log(response);
+      });
+  }
+
+  register(): void {
+    this.servicoBack
+      .register(this.getDados())
+      .pipe(
+        catchError((error) => {
+          return of(error);
+        })
+      )
+
+      .subscribe((response: any) => {
+        console.log(response);
+      });
+  }
+
+  getDados(): any {
+    return {
+      email: this.email,
+
+      senha: this.senha,
+    };
   }
 }
